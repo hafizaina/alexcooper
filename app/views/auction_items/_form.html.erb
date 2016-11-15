@@ -1,0 +1,27 @@
+<%= form_for(auction_item) do |f| %>
+  <% if auction_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(auction_item.errors.count, "error") %> prohibited this auction_item from being saved:</h2>
+
+      <ul>
+      <% auction_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :item_id %>
+    <%= f.text_field :item_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :auction_id %>
+    <%= f.text_field :auction_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
