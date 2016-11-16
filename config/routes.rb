@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :auction_items
   resources :auctions
   resources :items
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
