@@ -4,7 +4,7 @@ class AuctionsController < ApplicationController
   # GET /auctions
   # GET /auctions.json
   def index
-    @auctions = Auction.all
+    @auctions = Auction.all.paginate(page: params[:page], per_page:3)
   end
 
   # GET /auctions/1

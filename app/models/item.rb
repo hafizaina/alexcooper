@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
 
-  belongs_to :auction
+  belongs_to :lot
 
 end

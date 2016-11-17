@@ -10,13 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161116033748) do
+ActiveRecord::Schema.define(version: 20161117015804) do
 
   create_table "auctions", force: :cascade do |t|
-    t.string   "date"
     t.string   "location"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "name"
+    t.text     "description"
+    t.string   "start_date"
+    t.string   "end_date"
   end
 
   create_table "items", force: :cascade do |t|
@@ -27,7 +30,16 @@ ActiveRecord::Schema.define(version: 20161116033748) do
     t.integer  "auction_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "lot_id"
     t.index ["auction_id"], name: "index_items_on_auction_id"
+    t.index ["lot_id"], name: "index_items_on_lot_id"
+  end
+
+  create_table "lots", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "auction_id"
+    t.index ["auction_id"], name: "index_lots_on_auction_id"
   end
 
 end
