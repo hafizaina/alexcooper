@@ -42,18 +42,76 @@
   color: inherit;
 }
 
+div.pagination {
+  margin-bottom: 15px;
+}
+
 .pagination {
-  display: inline-block;
-  padding-left: 0;
-  margin: 18px 0;
-  border-radius: 4p;
+  background: white;
+  cursor: default;
+  /* self-clearing method: */
 }
 
-#auction-list ul.pagination {
+.pagination a, .pagination span, .pagination em {
+  padding: 0.2em 0.5em;
   display: block;
-  margin: 0;
+  float: left;
+  margin-right: 1px;
 }
 
-.pull-right {
-  float: right !important;
+.pagination .disabled {
+  color: #999999;
+  border: 1px solid #dddddd;
+}
+
+.pagination .current {
+  font-style: normal;
+  font-weight: bold;
+  background: #38413f;
+  color: #ffffff;
+  border: 1px solid #38413f;
+}
+
+.pagination a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #38413f;
+  border: 1px solid #ddd;
+}
+
+.pagination a:hover, .pagination a:focus {
+  color: #ffffff;
+  background: #38413f;
+  border-color: #38413f;
+}
+
+.pagination .page_info {
+  background: #38413f;
+  color: white;
+  padding: 0.4em 0.6em;
+  width: 22em;
+  margin-bottom: 0.3em;
+  text-align: center;
+}
+
+.pagination .page_info b {
+  color: #ffffff;
+  background: #38413f;
+  padding: 0.1em 0.25em;
+}
+
+.pagination:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+* html .pagination {
+  height: 1%;
+}
+
+*:first-child + html .pagination {
+  overflow: hidden;
 }
