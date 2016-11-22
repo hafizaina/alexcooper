@@ -4,18 +4,38 @@
 
 <h1>Alex Cooper Auction Display</h1>
 
-<%= will_paginate @auctions %>
+<ul class="nav nav-tabs">
+  <li class="active"><%= link_to 'Auctions', auctions_path %></li>
+  <li><%= link_to 'Lot List' %></li>
 
-<% # List all the auctions in our database %>
-<% @auctions.each do |auction| %>
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <div class="panel-title text-nowrap"><%= auction.name %></div>
-      </div>
-      <p><%= auction.location %></p>
-      <p>Date(s) <%= auction.start_date %> - <%= auction.end_date %></p>
-      <p><%= auction.description %></p>
-    </div>
-<% end %>
+</ul>
+
+<table id="auction-list" class="table table-fixed table-no-border">
+
+  <thead>
+    <tr>
+      <th><div class="pull-right"><%= will_paginate @auctions %></div></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% # List all the auctions in our database %>
+  <% @auctions.each do |auction| %>
+      <tr>
+        <td class="p-x-0">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <div class="panel-title text-nowrap"><%= auction.name %></div>
+            </div>
+            <p><%= auction.location %></p>
+            <p>Date(s) <%= auction.start_date %> - <%= auction.end_date %></p>
+            <p><%= auction.description %></p>
+          </div>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+
+</table>
 
 <%= will_paginate @auctions %>

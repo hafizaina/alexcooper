@@ -1,0 +1,105 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* Variables */
+
+$primary-color: #38413f;
+
+.panel-primary {
+  border-color: $primary-color;
+}
+
+.panel-primary > .panel-heading {
+  color: #ffffff;
+  background-color: $primary-color;
+  border-color: $primary-color;
+}
+
+div.pagination {
+  margin-bottom: 15px;
+}
+
+/* Start .pagination */
+.pagination {
+
+  background: white;
+  cursor: default;
+
+  /* Start .pagination a */
+  a {
+    font-weight: bold;
+    text-decoration: none;
+    color: $primary-color;
+    border: 1px solid #ddd;
+
+    &:hover, &:focus {
+      color: #ffffff;
+      background: $primary-color;
+      border-color: $primary-color;
+    }
+  }
+  /* End .pagination a */
+
+  a, span, em {
+    padding: 0.2em 0.5em;
+    display: block;
+    float: left;
+    margin-right: 1px;
+  }
+
+  .disabled {
+    color: #999999;
+    border: 1px solid #dddddd;
+  }
+
+  .current {
+    font-style: normal;
+    font-weight: bold;
+    background: $primary-color;
+    color: #ffffff;
+    border: 1px solid $primary-color;
+  }
+
+  .page_info {
+    background: $primary-color;
+    color: white;
+    padding: 0.4em 0.6em;
+    width: 22em;
+    margin-bottom: 0.3em;
+    text-align: center;
+
+    b {
+      color: #ffffff;
+      background: $primary-color;
+      padding: 0.1em 0.25em;
+    }
+  }
+
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+
+
+}
+/* End .pagination */
+
+* html .pagination {
+  height: 1%;
+}
+
+*:first-child + html .pagination {
+  overflow: hidden;
+}
+
+.p-x-0 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.table.table-no-border>tbody>tr>td {
+  border-top: none;
+}
